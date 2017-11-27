@@ -3,7 +3,7 @@ import six
 
 from _ssl import SSLError
 import copy
-import logging
+import logging as logger
 import socket
 import re
 
@@ -17,6 +17,8 @@ re_name = re.compile('name\s*=\s*[\'"]([^\'"]+)[\'"]', re.IGNORECASE)
 re_script = re.compile('<script[^>]+src\s*=\s*["\']([^"\']*)', re.IGNORECASE)
 
 TIMEOUT = 3
+
+logging = logger.getLogger(__name__)
 
 
 class Detector(object):
